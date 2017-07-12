@@ -14,7 +14,7 @@ $(document).ready(function () {
 
     setTimeout(function () {
 
-        window.location.href = "index.html";
+        window.location.href = "../../gamePage.html";
 
     }, 60000);
 

@@ -1,257 +1,59 @@
 <!--Author: Alfredo Rodriguez-->
-<!--File: HTML - index.html-->
+<!--File: HTMindex.htmlhtml-->
 <!--Date: 7/8/2017-->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device=width,initial-scale=1, maximum-scale=1 ,user-scalable=no">
-    <meta name="author" content="Alfredo Rodriguez">
-    <title>Star Wars RPG</title>
+    <title>Opening Crawl | Star Wars RPG</title>
 
     <!--Scripts-->
+    <link rel="stylesheet" type="text/css" href="assets/css/starwarsCSS.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <script type="text/javascript" src="assets/js/script.js"></script>
+    <script type="text/javascript" src="assets/js/openingCrawlScript.js"></script>
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 
 </head>
 <body>
 
-<audio src="assets/sounds/anakinVoice.mp3" id="anakinVoice"></audio>
-<audio src="assets/sounds/darthMalakVoice.mp3" id="malakVoice"></audio>
-<audio src="assets/sounds/galenVoice.mp3" id="galenVoice"></audio>
-<audio src="assets/sounds/revanVoice.mp3" id="revanVoice"></audio>
-<audio src="assets/sounds/starwarsBackgroundMusic.mp3" id="backgroundMusic"></audio>
+<audio src="assets/sounds/themeSong.mp3" id="themeSong"></audio>
 
+<div class="fade"></div>
 
-<div class="container-fluid">
+<section class="star-wars">
 
+    <div class="crawl">
 
-    <div class="row">
-
-        <div class="col-lg-12">
-
-            <h1 id="title"> Star Wars </h1>
-
+        <div class="title">
+            <p>Star Wars RPG</p>
+            <h1>Game Instructions:</h1>
         </div>
 
+        <p>Choose one of four characters (Anakin Skywalker, Galen Marek,
+            Darth Malak, Darth Revan) from the Star Wars Universe.</p>
+
+        <p>Then, out of the ones you did not pick choose an enemy to fight.
+            Choose carefully, because some enemies may be stronger than others!
+        </p>
+
+        <p>Once entered in the fight stage, characters will battle it out until either, your character or the
+            enemy's characters life points are depleted to zero. This will determine the winner of the battle. Good luck
+            to you
+            and may the force be with you!</p>
+
+        <p>Copyright © Alfredo Rodriguez 2017</p>
     </div>
 
-    <div class="row">
+    <button onclick="window.location.href='gamePage.html'">Skip >></button>
 
-    <div class="row" id="rowLeft">
+</section>
 
-        <div class="row">
 
-            <h1>Character</h1>
-
-            <div class="col-md-6" id="characterSelection">
-
-                <button class="characters" id="Anakin-1">
-
-                    <h2>Anakin Skywalker</h2>
-
-                    <img src="assets/images/anakinSkywalker.jpg" class="images">
-
-                    <div class="anakinHP"></div>
-
-                </button>
-
-                <button class="characters" id="Galen-1">
-
-                    <h2>Galen Marek</h2>
-
-                    <img src="assets/images/galenMarek.jpg" class="images">
-
-                    <div class="galenHP"></div>
-
-                </button>
-
-                <button class="characters" id="Malak-1">
-
-                    <h2>Darth Malak</h2>
-
-                    <img src="assets/images/darthMalak.jpg" class="images">
-
-                    <div class="malakHP"></div>
-
-                </button>
-
-                <button class="characters" id="Revan-1">
-
-                    <h2>Darth Revan</h2>
-
-                    <img src="assets/images/darthRevan.jpg" class="images">
-
-                    <div class="revanHP"></div>
-
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <div class="row">
-
-            <h1 id="enemyHeader">Enemies</h1>
-
-            <div class="col-md-6" id="enemySelection">
-
-                <button class="enemies" id="Anakin-2">
-
-                    <h2>Anakin Skywalker</h2>
-
-                    <img src="assets/images/anakinSkywalker.jpg" class="images">
-
-                    <div class="anakin-2-HP"></div>
-
-                </button>
-
-                <button class="enemies" id="Galen-2">
-
-                    <h2>Galen Marek</h2>
-
-                    <img src="assets/images/galenMarek.jpg" class="images">
-
-                    <div class="galen-2-HP"></div>
-
-                </button>
-
-                <button class="enemies" id="Malak-2">
-
-                    <h2>Darth Malak</h2>
-
-                    <img src="assets/images/darthMalak.jpg" class="images">
-
-                    <div class="malak-2-HP"></div>
-
-                </button>
-
-                <button class="enemies" id="Revan-2">
-
-                    <h2>Darth Revan</h2>
-
-                    <img src="assets/images/darthRevan.jpg" class="images">
-
-                    <div class="revan-2-HP"></div>
-
-                </button>
-
-            </div>
-
-        </div>
-
-        <div class="row">
-
-            <div class="col-md-6" id="playButtons">
-
-                <a href="#" class="button black" id="attack">Attack</a>
-
-                <a href="#" class="button purple" id="force">Force Attack</a>
-
-                <a href="#" class="button green" id="meditate">Meditate</a>
-
-                <a href="#" class="button dsgnmoo" id="enrage">Enrage</a>
-
-            </div>
-
-        </div>
-
-
-        <div class="row">
-
-            <h1 id="defenderHeader">Defender</h1>
-
-            <div class="col-md-6" id="fightStage">
-
-                <button class="enemies" id="Anakin-3">
-
-                    <h2>Anakin Skywalker</h2>
-
-                    <img src="assets/images/anakinSkywalker.jpg" class="images">
-
-                    <div class="anakin-2-HP"></div>
-
-                </button>
-
-                <button class="enemies" id="Galen-3" onmouseover=>
-
-                    <h2>Galen Marek</h2>
-
-                    <img src="assets/images/galenMarek.jpg" class="images">
-
-                    <div class="galen-2-HP"></div>
-
-                </button>
-
-                <button class="enemies" id="Malak-3">
-
-                    <h2>Darth Malak</h2>
-
-                    <img src="assets/images/darthMalak.jpg" class="images">
-
-                    <div class="malak-2-HP"></div>
-
-                </button>
-
-                <button class="enemies" id="Revan-3">
-
-                    <h2>Darth Revan</h2>
-
-                    <img src="assets/images/darthRevan.jpg" class="images">
-
-                    <div class="revan-2-HP"></div>
-
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <div class="row">
-
-            <div class="col-md-6" id="resetStage">
-
-                <a href="#" class="button rss" id="resetGame">Reset Game</a>
-
-                <a href="openingCrawl.html" class="button yahoo" id="crawlSequence">Crawl Sequence</a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <div class="row" id="rowRight">
-
-        <div class="col-md-6" id="textBox">
-
-            <div id="gameStatus">
-
-                <h1>BABABABBABABA</h1>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    </div>
-
-</div>
 
 </body>
+
 </html>
