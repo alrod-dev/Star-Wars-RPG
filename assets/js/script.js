@@ -146,7 +146,7 @@ $(document).ready(function () {
 
         characterSelected = $(".malaksHealth");
 
-        characterHealth = characterSelected.text();
+        characterHealth = parseInt(characterSelected.text());
 
         characterName = $("#malekName").text();
 
@@ -164,7 +164,7 @@ $(document).ready(function () {
 
         characterSelected = $(".revansHealth");
 
-        characterHealth = characterSelected.text();
+        characterHealth = parseInt(characterSelected.text());
 
         characterName = $("#revanName").text();
 
@@ -208,7 +208,7 @@ $(document).ready(function () {
 
         enemySelected = $(".galens-2-Health");
 
-        enemyHealth = enemySelected.text()[0] + enemySelected.text()[1] + enemySelected.text()[2];
+        enemyHealth = parseInt(enemySelected.text()[0] + enemySelected.text()[1] + enemySelected.text()[2]);
 
         enemyName = $("#galenName").text();
 
@@ -227,7 +227,7 @@ $(document).ready(function () {
 
         enemySelected = $(".malaks-2-Health");
 
-        enemyHealth = enemySelected.text()[0] + enemySelected.text()[1] + enemySelected.text()[2];
+        enemyHealth = parseInt(enemySelected.text()[0] + enemySelected.text()[1] + enemySelected.text()[2]);
 
         enemyName = $("#malekName").text();
 
@@ -246,7 +246,7 @@ $(document).ready(function () {
 
         enemySelected = $(".revans-2-Health");
 
-        enemyHealth = enemySelected.text()[0] + enemySelected.text()[1] + enemySelected.text()[2];
+        enemyHealth = parseInt(enemySelected.text()[0] + enemySelected.text()[1] + enemySelected.text()[2]);
 
         enemyName = $("#revanName").text();
 
@@ -396,17 +396,15 @@ $(document).ready(function () {
 
         //Resets Health
 
-        $(".anakinHP").text(randNum(150, 250));
-
-        console.log($(".anakinHP").text());
-
-        $(".malakHP").text(randNum(150, 250));
-        $(".galenHP").text(randNum(150, 250));
-        $(".revanHP").text(randNum(150, 250));
-        $(".anakin-2-HP").text(randNum(150, 250));
-        $(".malak-2-HP").text(randNum(150, 250));
-        $(".galen-2-HP").text(randNum(150, 250));
-        $(".revan-2-HP").text(randNum(150, 250));
+        //Sets the Life Points of every character
+        $(".anakinHP").html("<h2 class='anakinsHealth'>" + randNum(150, 250) + "</h2>");
+        $(".galenHP").html("<h2 class='galensHealth'>" + randNum(150, 250) + "</h2>");
+        $(".malakHP").html("<h2 class='malaksHealth'>" + randNum(150, 250) + "</h2>");
+        $(".revanHP").html("<h2 class='revansHealth'>" + randNum(150, 250) + "</h2>");
+        $(".anakin-2-HP").html("<h2 class='anakins-2-Health'>" + randNum(150, 250) + "</h2>");
+        $(".galen-2-HP").html("<h2 class='galens-2-Health'>" + randNum(150, 250) + "</h2>");
+        $(".malak-2-HP").html("<h2 class='malaks-2-Health'>" + randNum(150, 250) + "</h2>");
+        $(".revan-2-HP").html("<h2 class='revans-2-Health'>" + randNum(150, 250) + "</h2>");
 
 
         //Enabling Buttons
