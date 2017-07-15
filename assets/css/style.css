@@ -9,14 +9,29 @@ body
 
 
 #characterSelection, #enemySelection, #fightStage, #playButtons,
-#resetStage, #textBox
+#resetStage, .col-md-9
 {
     text-align: center;
 
     margin: 1% 10% 1% 10%;
 
     width: 80%;
+
+    z-index: 0;
 }
+
+#sidebar
+{
+    z-index: 2;
+
+    position: absolute;
+
+    top: 25%;
+    right: 24%;
+
+    overflow: hidden;
+}
+
 
 h1
 {
@@ -324,4 +339,11 @@ a.button.yahoo:active {
     border: solid 1px #4b2a55;
     box-shadow: inset 0 10px 15px 0 #4d2955; }
 
+/*textbox*/
 
+
+#textBox
+{
+    margin-bottom: 15%;
+    margin-top: 15%;
+}

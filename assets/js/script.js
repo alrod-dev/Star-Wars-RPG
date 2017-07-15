@@ -31,7 +31,7 @@ $(document).ready(function () {
     $("#enemyHeader").hide();
     $("#defenderHeader").hide();
     $("#resetStage").hide();
-    $("#textBox").hide();
+    $("#sidebar").hide();
 
 
     //Loads the voices of every character
@@ -106,14 +106,14 @@ $(document).ready(function () {
     //And lock the button of the current character.
     $("#Anakin-1").on("click", function () {
 
+        //Character Info
         characterSelected = $(".anakinsHealth");
 
         characterHealth = parseInt(characterSelected.text());
 
-        console.log(characterHealth);
-
         characterName = $("#anakinName").text();
 
+        //Layouts
         $("#Anakin-1").attr("disabled", true);
 
         $("#enemySelection").show();
@@ -122,6 +122,13 @@ $(document).ready(function () {
         $("#Malak-1").hide();
         $("#Revan-1").hide();
         $("#Galen-1").hide();
+
+        //More Info
+
+        $("#characterName").text(characterName);
+        $("#characterHealth").text(characterHealth);
+        $("#AP").text(characterDMG);
+
     });
 
     $("#Galen-1").on("click", function () {
@@ -140,6 +147,12 @@ $(document).ready(function () {
         $("#Malak-1").hide();
         $("#Revan-1").hide();
         $("#Anakin-1").hide();
+
+        //More Info
+
+        $("#characterName").text(characterName);
+        $("#characterHealth").text(characterHealth);
+        $("#AP").text(characterDMG);
     });
 
     $("#Malak-1").on("click", function () {
@@ -158,6 +171,12 @@ $(document).ready(function () {
         $("#Anakin-1").hide();
         $("#Revan-1").hide();
         $("#Galen-1").hide();
+
+        //More Info
+
+        $("#characterName").text(characterName);
+        $("#characterHealth").text(characterHealth);
+        $("#AP").text(characterDMG);
     });
 
     $("#Revan-1").on("click", function () {
@@ -176,6 +195,12 @@ $(document).ready(function () {
         $("#Malak-1").hide();
         $("#Anakin-1").hide();
         $("#Galen-1").hide();
+
+        //More Info
+
+        $("#characterName").text(characterName);
+        $("#characterHealth").text(characterHealth);
+        $("#AP").text(characterDMG);
     });
 
     //Enemy Selection
@@ -185,14 +210,16 @@ $(document).ready(function () {
 
     $("#Anakin-2").on("click", function () {
 
+
+        //Health and Names
         enemySelected = $(".anakins-2-Health");
 
         enemyHealth = parseInt(enemySelected.text()[0] + enemySelected.text()[1] + enemySelected.text()[2]);
 
-        console.log(enemyHealth);
-
         enemyName = $("#anakinName").text();
 
+
+        //Change Screen Parameters
         $("#enemySelection").hide();
         $("#enemyHeader").hide();
         $("#defenderHeader").show();
@@ -202,16 +229,32 @@ $(document).ready(function () {
         $("#Malak-3").hide();
         $("#Revan-3").hide();
         $("#Galen-3").hide();
+
+
+        //Changing Layouts
+
+        $(".col-md-9").css("margin", "0");
+        $(".col-md-9").css("width", "75%");
+        $("#sidebar").show();
+
+        //More Info
+
+        $("#enemyName").text(enemyName);
+        $("#enemyHealth").text(enemyHealth);
     });
 
     $("#Galen-2").on("click", function () {
 
+
+        //Health and Names
         enemySelected = $(".galens-2-Health");
 
         enemyHealth = parseInt(enemySelected.text()[0] + enemySelected.text()[1] + enemySelected.text()[2]);
 
         enemyName = $("#galenName").text();
 
+
+        //Change Screen Parameters
         $("#enemySelection").hide();
         $("#enemyHeader").hide();
         $("#defenderHeader").show();
@@ -221,16 +264,30 @@ $(document).ready(function () {
         $("#Malak-3").hide();
         $("#Revan-3").hide();
         $("#Anakin-3").hide();
+
+        //Changing Layouts
+
+        $(".col-md-9").css("margin", "0");
+        $(".col-md-9").css("width", "75%");
+        $("#sidebar").show();
+
+        //More Info
+
+        $("#enemyName").text(enemyName);
+        $("#enemyHealth").text(enemyHealth);
+
     });
 
     $("#Malak-2").on("click", function () {
 
+        //Health and Names
         enemySelected = $(".malaks-2-Health");
 
         enemyHealth = parseInt(enemySelected.text()[0] + enemySelected.text()[1] + enemySelected.text()[2]);
 
         enemyName = $("#malekName").text();
 
+        //Change Screen Parameters
         $("#enemySelection").hide();
         $("#enemyHeader").hide();
         $("#defenderHeader").show();
@@ -240,16 +297,29 @@ $(document).ready(function () {
         $("#Anakin-3").hide();
         $("#Revan-3").hide();
         $("#Galen-3").hide();
+
+        //Changing Layouts
+
+        $(".col-md-9").css("margin", "0");
+        $(".col-md-9").css("width", "75%");
+        $("#sidebar").show();
+
+        //More Info
+
+        $("#enemyName").text(enemyName);
+        $("#enemyHealth").text(enemyHealth);
     });
 
     $("#Revan-2").on("click", function () {
 
+        //Health and Names
         enemySelected = $(".revans-2-Health");
 
         enemyHealth = parseInt(enemySelected.text()[0] + enemySelected.text()[1] + enemySelected.text()[2]);
 
         enemyName = $("#revanName").text();
 
+        //Change Screen Parameters
         $("#enemySelection").hide();
         $("#enemyHeader").hide();
         $("#defenderHeader").show();
@@ -259,11 +329,20 @@ $(document).ready(function () {
         $("#Malak-3").hide();
         $("#Anakin-3").hide();
         $("#Galen-3").hide();
+
+        //Changing Layouts
+        $(".col-md-9").css("margin", "0");
+        $(".col-md-9").css("width", "75%");
+        $("#sidebar").show();
+
+        //More Info
+
+        $("#enemyName").text(enemyName);
+        $("#enemyHealth").text(enemyHealth);
     });
 
 
     //Game Play Buttons
-
     var characterDMG = [20, 50];
     var enemyDMG = [20, 50];
 
@@ -271,8 +350,7 @@ $(document).ready(function () {
     var enemyforceDMG = [40, 80];
 
 
-
-
+    //Function that returns random number to attack
     function attack(damage) {
 
         return Math.floor(Math.random() * (damage[1] - damage[0] + 1)) + damage[0];
@@ -281,20 +359,25 @@ $(document).ready(function () {
 
     $("#attack").on("click", function () {
 
+        var damagedEnemy = attack(enemyDMG);
+        var damagedCharacter = attack(characterDMG);
 
-        console.log(characterHealth);
-        console.log(enemyHealth);
+        characterHealth -= damagedCharacter;
+        enemyHealth -= damagedEnemy;
 
-        characterHealth -= attack(characterDMG);
-        enemyHealth -= attack(enemyDMG);
-
-        console.log(characterHealth);
-        console.log(enemyHealth);
-
+        //Health Updated on both characters
         characterSelected.html(characterHealth);
-        enemySelected.html(enemyHealth);
+        $("#characterHealth").html(characterHealth);
 
-        if (characterHealth <= 0) {
+        enemySelected.html(enemyHealth);
+        $("#enemyHealth").html(enemyHealth);
+
+        //Textbox
+        $("#textBox").html("<h1>" + characterName + " is damaged by " + damagedCharacter + "</h1>"
+            + "<br>" + "<h1>" + enemyName + " is damaged by " + damagedEnemy + "</h1>");
+
+        //If character is below 0 Enemy Wins
+        if ((characterHealth <= 0) && (characterHealth < enemyHealth)) {
 
             $("#characterSelection").hide();
 
@@ -302,9 +385,12 @@ $(document).ready(function () {
 
             $("#resetStage").show();
 
+            $("#textBox").html("<h1>" + characterName + " is the Winner</h1>");
+
         }
 
-        else if (enemyHealth <= 0) {
+        //If enemy is below 0 Character Wins
+        else if ((enemyHealth <= 0) && (enemyHealth < characterHealth)) {
 
             $("#fightStage").hide();
 
@@ -312,26 +398,32 @@ $(document).ready(function () {
 
             $("#resetStage").show();
 
+            $("#textBox").html("<h1>" + enemyName + " is the Winner</h1>");
         }
 
     });
 
     $("#force").on("click", function () {
 
-        console.log(characterHealth);
-        console.log(characterHealth);
-        console.log(enemyHealth);
+        var damagedEnemy = attack(enemyDMG);
+        var damagedCharacter = attack(characterDMG);
 
-        characterHealth -= attack(characterforceDMG);
-        enemyHealth -= attack(enemyforceDMG);
+        characterHealth -= damagedCharacter;
+        enemyHealth -= damagedEnemy;
 
-        console.log(characterHealth);
-        console.log(enemyHealth);
-
+        //Health points updated on both characters
         characterSelected.html(characterHealth);
-        enemySelected.html(enemyHealth);
+        $("#characterHealth").html(characterHealth);
 
-        if (characterHealth <= 0) {
+        enemySelected.html(enemyHealth);
+        $("#enemyHealth").html(enemyHealth);
+
+        //Textbox
+        $("#textBox").html("<h1>" + characterName + " is damaged by " + damagedCharacter + "</h1>"
+            + "<br>" + "<h1>" + enemyName + " is damaged by " + damagedEnemy + "</h1>");
+
+        //If character is below 0 Enemy Wins
+        if ((characterHealth <= 0) && (characterHealth < enemyHealth)) {
 
             $("#characterSelection").hide();
 
@@ -339,9 +431,12 @@ $(document).ready(function () {
 
             $("#resetStage").show();
 
+            $("#textBox").html("<h1>" + characterName + " is the Winner</h1>");
+
         }
 
-        else if (enemyHealth <= 0) {
+        //If enemy is below 0 Character Wins
+        else if ((enemyHealth <= 0) && (enemyHealth < characterHealth)) {
 
             $("#fightStage").hide();
 
@@ -349,22 +444,22 @@ $(document).ready(function () {
 
             $("#resetStage").show();
 
+            $("#textBox").html("<h1>" + enemyName + " is the Winner</h1>");
         }
-
     });
 
     $("#enrage").on("click", function () {
 
+        //Adds more damage to the character
         characterDMG[0] += 20;
         characterDMG[1] += 20;
 
-        console.log(characterDMG);
-
+        //Adds more damage to the character force attack
         characterforceDMG[0] += 20;
         characterforceDMG[1] += 20;
 
-        console.log(characterforceDMG);
-
+        //Updates the text
+        $("#AP").text(characterDMG);
 
     });
 
@@ -379,7 +474,14 @@ $(document).ready(function () {
         $("#enemyHeader").hide();
         $("#defenderHeader").hide();
         $("#resetStage").hide();
-        $("#textBox").hide();
+
+
+        //Reset Layouts
+        $("#textBox").empty();
+        $(".col-md-9").css("margin", "1% 10% 1% 10%");
+        $(".col-md-9").css("width", "80%");
+        $("#sidebar").hide();
+
 
         //Shows if this dissappears
         $("#characterSelection").show();
@@ -417,6 +519,7 @@ $(document).ready(function () {
 
         characterDMG = [20, 50];
         characterforceDMG = [40, 80];
+
 
     });
 
